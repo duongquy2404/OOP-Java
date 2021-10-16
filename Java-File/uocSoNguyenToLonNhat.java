@@ -16,12 +16,14 @@ public class uocSoNguyenToLonNhat {
         int test=sc.nextInt();
         while(test>0){
             long n=sc.nextLong();
-            for(long i=n;i>=0;i--){
-                if(n%i==0&&checkNT(i)){
-                    System.out.println(i);
-                    break;
+            int res=0;
+            for(int i=2;i<=n;i++){
+                while(n%i==0){
+                    res=i;
+                    n/=i;
                 }
             }
+            System.out.println(res);
             test--;
         }
     }
